@@ -81,7 +81,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #007BFF;
+            background: #4B5320; /* اللون البيج الغامق */
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -95,6 +95,9 @@
         .chat-icon img {
             width: 30px;
             height: 30px;
+        }
+        .chatbot.active {
+            background-color: #4B5320; /* اللون الزيتي */
         }
     </style>
 </head>
@@ -137,6 +140,7 @@
         // وظيفة لتبديل ظهور الشات بوت
         function toggleChat() {
             chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+            chatbot.classList.toggle('active'); // تغيير اللون عند الفتح
         }
 
         // وظيفة لإرسال رسالة
@@ -181,6 +185,7 @@
             // تحقق إذا كان الضغط ليس داخل الشات بوت أو الأيقونة
             if (!chatbot.contains(event.target) && event.target !== chatIcon) {
                 chatbot.style.display = "none";
+                chatbot.classList.remove('active'); // إعادة اللون عند الإخفاء
             }
         });
     </script>
