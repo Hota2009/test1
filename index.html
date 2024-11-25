@@ -26,6 +26,7 @@
             border-radius: 8px;
             overflow: hidden;
             display: none; /* مخفي افتراضيًا */
+            z-index: 1000;
         }
         .chat-header {
             background-color: #007BFF;
@@ -89,6 +90,7 @@
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            z-index: 1001;
         }
         .chat-icon img {
             width: 30px;
@@ -123,6 +125,7 @@
         const chatBody = document.getElementById('chat-body');
         const userInput = document.getElementById('user-input');
         const chatbot = document.getElementById('chatbot');
+        const chatIcon = document.querySelector('.chat-icon');
 
         // قائمة المشروبات
         const drinks = {
@@ -172,6 +175,14 @@
             }
             addMessage(response, "bot-message");
         }
+
+        // إخفاء الشات بوت عند الضغط في أي مكان آخر
+        document.addEventListener('click', function(event) {
+            // تحقق إذا كان الضغط ليس داخل الشات بوت أو الأيقونة
+            if (!chatbot.contains(event.target) && event.target !== chatIcon) {
+                chatbot.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
