@@ -133,8 +133,8 @@
         // قائمة المشروبات
         const drinks = {
             strawberry: ["عصير فراولة", "ميلك شيك فراولة", "فرابتشينو فراولة"],
-            chocolate: ["هوت شوكليت", "ميلك شيك شوكليت"],
-            vanilla: ["لاتيه فانيليا", "ميلك شيك فانيليا"]
+            a7a: [" ا", "احا عادية"],
+            vanilla: ["احا بالاتيني ", "احا عادية"]
         };
 
         // وظيفة لتبديل ظهور الشات بوت
@@ -170,9 +170,9 @@
             let response = "";
             if (input.includes("فراولة") || input.includes("strawberry")) {
                 response = `أنصحك بتجربة: ${drinks.strawberry.join(" أو ")}`;
-            } else if (input.includes("شوكولاتة") || input.includes("chocolate")) {
+            } else if احا || input.includes("chocolate")) {
                 response = `أنصحك بتجربة: ${drinks.chocolate.join(" أو ")}`;
-            } else if (input.includes("فانيليا") || input.includes("vanilla")) {
+            } else if (input.includes("احا") || input.includes("vanilla")) {
                 response = `أنصحك بتجربة: ${drinks.vanilla.join(" أو ")}`;
             } else {
                 response = "عذرًا، لم أفهم. ما النكهة التي تحبها؟";
