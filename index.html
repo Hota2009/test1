@@ -3,219 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flavour - Chatbot</title>
+    <title>خصومات Flavour Cafe</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .web {
-            margin: 20px;
-        }
-        .chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            max-width: 90%;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            display: none; /* مخفي افتراضيًا */
-            z-index: 1000;
-        }
-        .chat-header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px;
+            font-family: "Arial", sans-serif;
+            background-color: #f8f5f0;
+            color: #4a3f35;
+            padding: 20px;
             text-align: center;
         }
-        .chat-body {
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 10px;
+
+        header {
+            background-color: #4a3f35;
+            color: #d4a373;
+            padding: 15px 0;
         }
-        .chat-footer {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #ddd;
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
         }
-        .chat-footer input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            outline: none;
-        }
-        .chat-footer button {
-            margin-left: 5px;
-            padding: 8px 12px;
-            border: none;
-            background: #007BFF;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .chat-footer button:hover {
-            background: #0056b3;
-        }
-        .message {
-            margin: 5px 0;
-            padding: 8px 10px;
-            border-radius: 8px;
-        }
-        .user-message {
-            background: #007BFF;
-            color: #fff;
-            align-self: flex-end;
-        }
-        .bot-message {
-            background: #f1f1f1;
-            color: #333;
-        }
-        .typing-effect {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite;
-        }
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-        @keyframes blink-caret {
-            from,
-            to {
-                border-right-color: transparent;
-            }
-            50% {
-                border-right-color: black;
-            }
-        }
-        .chat-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #4B5320; /* اللون البيج الغامق */
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
+
+        .discount-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 1001;
+            margin-top: 20px;
         }
-        .chat-icon img {
-            width: 30px;
-            height: 30px;
+
+        .item {
+            background-color: #fff;
+            border: 2px solid #d4a373;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .item h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #4a3f35;
+        }
+
+        .item .price {
+            margin: 10px 0;
+        }
+
+        .item .price .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .item .price .new-price {
+            color: #d9534f;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #4a3f35;
+            color: #f8f5f0;
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="web">
-        <embed src="https://menu.instalacarte.com/menu/s/ar/Flavour/hot-drink/all/" width="100%" height="670px" />
-        <p class="copyright">Made by Ahmed Idrees</p>
-    </div>
+    <header>
+        <h1>العروض والخصومات</h1>
+    </header>
 
-    <!-- Chat Icon -->
-    <div class="chat-icon" id="chat-icon" onclick="toggleChat()">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chat">
-    </div>
-
-    <!-- Chatbot Section -->
-    <div class="chatbot" id="chatbot">
-        <div class="chat-header">مساعد المشروبات</div>
-        <div class="chat-body" id="chat-body">
-            <div class="bot-message message">
-                <span class="typing-effect">مرحبًا! أخبرني بنكهتك المفضلة وسأقترح مشروبات تناسب ذوقك.</span>
+    <div class="discount-container">
+        <div class="item">
+            <img src="1.jpg" alt="Latte">
+            <h3>لاتيه</h3>
+            <div class="price">
+                <span class="old-price">50 جنيه</span>
+                <span class="new-price">40 جنيه</span>
             </div>
         </div>
-        <div class="chat-footer">
-            <input type="text" id="user-input" placeholder="اكتب هنا...">
-            <button onclick="sendMessage()">إرسال</button>
+        <div class="item">
+            <img src="2.png" alt="Cappuccino">
+            <h3>كابتشينو</h3>
+            <div class="price">
+                <span class="old-price">45 جنيه</span>
+                <span class="new-price">35 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="3.jpg" alt="Espresso">
+            <h3>إسبريسو</h3>
+            <div class="price">
+                <span class="old-price">40 جنيه</span>
+                <span class="new-price">30 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="4.jpg" alt="Americano">
+            <h3>أمريكانو</h3>
+            <div class="price">
+                <span class="old-price">35 جنيه</span>
+                <span class="new-price">25 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="5.jpg" alt="Mocha">
+            <h3>موكا</h3>
+            <div class="price">
+                <span class="old-price">55 جنيه</span>
+                <span class="new-price">45 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="6.png" alt="Hot Chocolate">
+            <h3>شوكولاتة ساخنة</h3>
+            <div class="price">
+                <span class="old-price">60 جنيه</span>
+                <span class="new-price">50 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="7.png" alt="Iced Coffee">
+            <h3>قهوة مثلجة</h3>
+            <div class="price">
+                <span class="old-price">50 جنيه</span>
+                <span class="new-price">40 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="8." alt="Caramel Latte">
+            <h3>لاتيه بالكراميل</h3>
+            <div class="price">
+                <span class="old-price">65 جنيه</span>
+                <span class="new-price">55 جنيه</span>
+            </div>
         </div>
     </div>
 
-    <script>
-        const chatBody = document.getElementById('chat-body');
-        const userInput = document.getElementById('user-input');
-        const chatbot = document.getElementById('chatbot');
-        const chatIcon = document.getElementById('chat-icon');
-
-        // قائمة المشروبات
-        const drinks = {
-            strawberry: ["عصير فراولة", "ميلك شيك فراولة", "فرابتشينو فراولة"],
-            chocolate: ["هوت شوكليت", "ميلك شيك شوكليت"],
-            vanilla: ["لاتيه فانيليا", "ميلك شيك فانيليا"]
-        };
-
-        // وظيفة لتبديل ظهور الشات بوت
-        function toggleChat() {
-            chatbot.style.display = "block"; // إظهار الشات بوت
-            chatIcon.style.display = "none"; // إخفاء الأيقونة
-        }
-
-        // إغلاق الشات عند النقر خارج النافذة
-        document.addEventListener("click", (e) => {
-            if (!chatbot.contains(e.target) && e.target !== chatIcon) {
-                chatbot.style.display = "none"; // إخفاء نافذة الشات
-                chatIcon.style.display = "flex"; // إعادة عرض الأيقونة
-            }
-        });
-
-        // وظيفة لإرسال رسالة
-        function sendMessage() {
-            const userMessage = userInput.value.trim();
-            if (userMessage === "") return;
-
-            // عرض رسالة المستخدم
-            addMessage(userMessage, "user-message");
-            userInput.value = "";
-
-            // الرد بناءً على المدخل
-            handleResponse(userMessage.toLowerCase());
-        }
-
-        // وظيفة لإضافة الرسالة إلى المحادثة
-        function addMessage(text, className) {
-            const message = document.createElement('div');
-            message.className = `message ${className}`;
-            if (className === "bot-message") {
-                const typingEffect = document.createElement('span');
-                typingEffect.className = "typing-effect";
-                typingEffect.textContent = text;
-                message.appendChild(typingEffect);
-            } else {
-                message.textContent = text;
-            }
-            chatBody.appendChild(message);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        // معالجة الردود
-        function handleResponse(input) {
-            let response = "";
-            if (input.includes("فراولة") || input.includes("strawberry")) {
-                response = `أنصحك بتجربة: ${drinks.strawberry.join(" أو ")}`;
-            } else if (input.includes("شوكولاتة") || input.includes("chocolate")) {
-                response = `أنصحك بتجربة: ${drinks.chocolate.join(" أو ")}`;
-            } else if (input.includes("فانيليا") || input.includes("vanilla")) {
-                response = `أنصحك بتجربة: ${drinks.vanilla.join(" أو ")}`;
-            } else {
-                response = "عذرًا، لم أفهم. ما النكهة التي تحبها؟";
-            }
-            addMessage(response, "bot-message");
-        }
-    </script>
+    <footer>
+        <p>© 2025 Flavour Cafe</p>
+    </footer>
 </body>
 </html>
