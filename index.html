@@ -15,6 +15,49 @@
             color: #4a3f35;
         }
 
+        .blurred {
+            filter: blur(8px);
+        }
+
+        .promo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .promo-message {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #d4a373;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .promo-message a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #d4a373;
+            color: #4a3f35;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .promo-message a:hover {
+            background-color: #4a3f35;
+            color: #f8f5f0;
+        }
+
         header {
             background-color: #4a3f35;
             color: #d4a373;
@@ -94,7 +137,14 @@
     </style>
 </head>
 <body>
-    <header>
+    <div id="promo-overlay" class="promo-overlay">
+        <div class="promo-message">
+            <p>⚡ خصومات رائعة بانتظارك! توجه الآن إلى قسم الخصومات للحصول على المزيد من التفاصيل.</p>
+            <a href="dis.html">اذهب إلى قسم الخصومات</a>
+        </div>
+    </div>
+
+    <header id="main-content">
         <h1>Flavour Cafe</h1>
         <nav>
             <a href="dis.html" class="discount-link">الخصومات</a>
@@ -109,5 +159,12 @@
         <p>© 2025 Flavour Cafe - <a href="https://www.instagram.com/fla.vourcafe" target="_blank" rel="noopener">Instagram</a></p>
         <p>Designed by Ahmed Idrees</p>
     </footer>
+
+    <script>
+        // Remove the promo message and overlay after 5 seconds
+        setTimeout(() => {
+            document.getElementById('promo-overlay').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 </html>
