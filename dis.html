@@ -8,7 +8,6 @@
         body {
             margin: 0;
             font-family: "Arial", sans-serif;
-            background-color: #f8f5f0;
             color: #4a3f35;
             padding: 20px;
             text-align: center;
@@ -18,11 +17,13 @@
             background-color: #4a3f35;
             color: #d4a373;
             padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
             font-size: 24px;
+            animation: slideDown 1s ease-in-out;
         }
 
         .discount-container {
@@ -31,6 +32,7 @@
             gap: 20px;
             justify-content: center;
             margin-top: 20px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .item {
@@ -40,11 +42,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 15px;
             text-align: center;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .item:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .item img {
@@ -82,6 +85,28 @@
             color: #f8f5f0;
             padding: 10px 0;
             margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -148,7 +173,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="8." alt="Caramel Latte">
+            <img src="8.jpg" alt="Caramel Latte">
             <h3>لاتيه بالكراميل</h3>
             <div class="price">
                 <span class="old-price">65 جنيه</span>
