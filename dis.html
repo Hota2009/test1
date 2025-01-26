@@ -6,157 +6,159 @@
     <title>خصومات Flavour Cafe</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: "Arial", sans-serif;
             background-color: #f8f5f0;
             color: #4a3f35;
-            margin: 0;
             padding: 20px;
             text-align: center;
         }
 
-        .discount-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+        header {
+            background-color: #4a3f35;
+            color: #d4a373;
+            padding: 15px 0;
         }
 
-        .row {
-            display: flex;
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .discount-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             justify-content: center;
-            width: 100%;
+            margin-top: 20px;
         }
 
         .item {
             background-color: #fff;
-            border: 1px solid #d4a373;
-            border-radius: 8px;
-            padding: 10px;
-            width: calc(50% - 20px);
+            border: 2px solid #d4a373;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
         }
 
         .item img {
             width: 100%;
-            border-radius: 6px;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         .item h3 {
-            font-size: 16px;
+            margin: 0;
+            font-size: 18px;
             color: #4a3f35;
         }
 
         .item .price {
-            margin-top: 10px;
+            margin: 10px 0;
         }
 
-        .old-price {
+        .item .price .old-price {
             text-decoration: line-through;
             color: #999;
-            margin-right: 5px;
+            font-size: 16px;
         }
 
-        .new-price {
+        .item .price .new-price {
             color: #d9534f;
+            font-size: 18px;
             font-weight: bold;
         }
 
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .item {
-                width: 90%;
-            }
+        footer {
+            background-color: #4a3f35;
+            color: #f8f5f0;
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body>
-    <h1>العروض والخصومات</h1>
+<body dir="rtl">
+    <header>
+        <h1>العروض والخصومات</h1>
+    </header>
 
     <div class="discount-container">
-        <!-- صف 1 -->
-        <div class="row">
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Latte">
-                <h3>لاتيه</h3>
-                <div class="price">
-                    <span class="old-price">50 جنيه</span>
-                    <span class="new-price">40 جنيه</span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Cappuccino">
-                <h3>كابتشينو</h3>
-                <div class="price">
-                    <span class="old-price">45 جنيه</span>
-                    <span class="new-price">35 جنيه</span>
-                </div>
+        <div class="item">
+            <img src="1.jpg" alt="Latte">
+            <h3>لاتيه</h3>
+            <div class="price">
+                <span class="old-price">50 جنيه</span>
+                <span class="new-price">40 جنيه</span>
             </div>
         </div>
-
-        <!-- صف 2 -->
-        <div class="row">
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Espresso">
-                <h3>إسبريسو</h3>
-                <div class="price">
-                    <span class="old-price">40 جنيه</span>
-                    <span class="new-price">30 جنيه</span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Americano">
-                <h3>أمريكانو</h3>
-                <div class="price">
-                    <span class="old-price">35 جنيه</span>
-                    <span class="new-price">25 جنيه</span>
-                </div>
+        <div class="item">
+            <img src="2.png" alt="Cappuccino">
+            <h3>كابتشينو</h3>
+            <div class="price">
+                <span class="old-price">45 جنيه</span>
+                <span class="new-price">35 جنيه</span>
             </div>
         </div>
-
-        <!-- صف 3 -->
-        <div class="row">
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Mocha">
-                <h3>موكا</h3>
-                <div class="price">
-                    <span class="old-price">55 جنيه</span>
-                    <span class="new-price">45 جنيه</span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Hot Chocolate">
-                <h3>شوكولاتة ساخنة</h3>
-                <div class="price">
-                    <span class="old-price">60 جنيه</span>
-                    <span class="new-price">50 جنيه</span>
-                </div>
+        <div class="item">
+            <img src="3.jpg" alt="Espresso">
+            <h3>إسبريسو</h3>
+            <div class="price">
+                <span class="old-price">40 جنيه</span>
+                <span class="new-price">30 جنيه</span>
             </div>
         </div>
-
-        <!-- صف 4 -->
-        <div class="row">
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Iced Latte">
-                <h3>آيس لاتيه</h3>
-                <div class="price">
-                    <span class="old-price">45 جنيه</span>
-                    <span class="new-price">35 جنيه</span>
-                </div>
+        <div class="item">
+            <img src="4.jpg" alt="Americano">
+            <h3>أمريكانو</h3>
+            <div class="price">
+                <span class="old-price">35 جنيه</span>
+                <span class="new-price">25 جنيه</span>
             </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/150" alt="Iced Americano">
-                <h3>آيس أمريكانو</h3>
-                <div class="price">
-                    <span class="old-price">40 جنيه</span>
-                    <span class="new-price">30 جنيه</span>
-                </div>
+        </div>
+        <div class="item">
+            <img src="5.jpg" alt="Mocha">
+            <h3>موكا</h3>
+            <div class="price">
+                <span class="old-price">55 جنيه</span>
+                <span class="new-price">45 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="6.png" alt="Hot Chocolate">
+            <h3>شوكولاتة ساخنة</h3>
+            <div class="price">
+                <span class="old-price">60 جنيه</span>
+                <span class="new-price">50 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="7.png" alt="Iced Coffee">
+            <h3>قهوة مثلجة</h3>
+            <div class="price">
+                <span class="old-price">50 جنيه</span>
+                <span class="new-price">40 جنيه</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="8." alt="Caramel Latte">
+            <h3>لاتيه بالكراميل</h3>
+            <div class="price">
+                <span class="old-price">65 جنيه</span>
+                <span class="new-price">55 جنيه</span>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2025 Flavour Cafe</p>
+    </footer>
 </body>
 </html>
