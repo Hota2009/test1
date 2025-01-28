@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة منتجات Flavour Cafe</title>
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
@@ -87,8 +87,21 @@
         }
 
         @media (max-width: 768px) {
+            .products-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
             .product {
-                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-container {
+                grid-template-columns: 1fr;
+            }
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
