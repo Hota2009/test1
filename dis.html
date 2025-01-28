@@ -3,189 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خصومات Flavour Cafe</title>
+    <title>قائمة منتجات Flavour Cafe</title>
     <style>
-        body {
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             margin: 0;
-            font-family: "Arial", sans-serif;
-            color: #4a3f35;
             padding: 20px;
+            direction: rtl;
             text-align: center;
         }
 
-        header {
-            background-color: #4a3f35;
-            color: #d4a373;
-            padding: 15px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        header h1 {
-            margin: 0;
+        .navigation a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #0056b3;
+        }
+
+        .section-title {
             font-size: 24px;
-            animation: slideDown 1s ease-in-out;
+            color: #555;
+            margin: 20px 0 10px;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding: 5px 10px;
         }
 
-        .discount-container {
+        .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             justify-content: center;
-            margin-top: 20px;
-            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .item {
+        .product {
             background-color: #fff;
-            border: 2px solid #d4a373;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .item img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .item h3 {
-            margin: 0;
+        .product h3 {
             font-size: 18px;
-            color: #4a3f35;
-        }
-
-        .item .price {
             margin: 10px 0;
+            color: #333;
         }
 
-        .item .price .old-price {
+        .product .price-before {
+            font-size: 14px;
             text-decoration: line-through;
-            color: #999;
-            font-size: 16px;
+            color: red;
         }
 
-        .item .price .new-price {
-            color: #d9534f;
-            font-size: 18px;
+        .product .price-after {
+            font-size: 16px;
+            color: green;
             font-weight: bold;
         }
 
-        footer {
-            background-color: #4a3f35;
-            color: #f8f5f0;
-            padding: 10px 0;
-            margin-top: 20px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        .product .discount {
+            font-size: 14px;
+            color: #d9534f;
+            font-weight: bold;
+            margin-top: 5px;
         }
 
-        /* Animations */
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
+        @media (max-width: 768px) {
+            .product {
+                width: 100%;
             }
         }
     </style>
 </head>
-<body dir="rtl">
-    <header>
-        <h1>العروض والخصومات</h1>
-    </header>
+<body>
+    <h1>قائمة منتجات Flavour Cafe</h1>
 
-    <div class="discount-container">
-        <div class="item">
-            <a href="https://hota2009.github.io/Flavour.menu/"> <img src="1.jpg" alt="Latte"></a>
-          <h3>لاتيه</h3>
-            <div class="price">
-                <span class="old-price">50 جنيه</span>
-                <span class="new-price">40 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="2.png" alt="Cappuccino">
-            <h3>كابتشينو</h3>
-            <div class="price">
-                <span class="old-price">45 جنيه</span>
-                <span class="new-price">35 جنيه</span>
-                <href></href>
-            </div>
-        </div>
-        <div class="item">
-            <img src="3.jpg" alt="Espresso">
-            <h3>إسبريسو</h3>
-            <div class="price">
-                <span class="old-price">40 جنيه</span>
-                <span class="new-price">30 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="4.jpg" alt="Americano">
-            <h3>أمريكانو</h3>
-            <div class="price">
-                <span class="old-price">35 جنيه</span>
-                <span class="new-price">25 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="5.jpg" alt="Mocha">
-            <h3>موكا</h3>
-            <div class="price">
-                <span class="old-price">55 جنيه</span>
-                <span class="new-price">45 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="6.png" alt="Hot Chocolate">
-            <h3>شوكولاتة ساخنة</h3>
-            <div class="price">
-                <span class="old-price">60 جنيه</span>
-                <span class="new-price">50 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="7.png" alt="Iced Coffee">
-            <h3>قهوة مثلجة</h3>
-            <div class="price">
-                <span class="old-price">50 جنيه</span>
-                <span class="new-price">40 جنيه</span>
-            </div>
-        </div>
-        <div class="item">
-            <img src="8.jpg" alt="Caramel Latte">
-            <h3>لاتيه بالكراميل</h3>
-            <div class="price">
-                <span class="old-price">65 جنيه</span>
-                <span class="new-price">55 جنيه</span>
-            </div>
+    <!-- روابط التنقل بين الأقسام -->
+    <div class="navigation">
+        <a href="#fresh-juice">Fresh Juice</a>
+        <a href="#iced-drinks">Iced Drinks</a>
+        <a href="#frappe">Frappe</a>
+        <a href="#milk-shake">Milk Shake</a>
+    </div>
+
+    <!-- قسم Fresh Juice -->
+    <div id="fresh-juice" class="section">
+        <h2 class="section-title">Fresh Juice</h2>
+        <div class="products-container">
+            <div class="product"><h3>Kiwi</h3><p class="price-before">80 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Banana with Milk</h3><p class="price-before">45 LE</p><p class="price-after">35 LE</p><p class="discount">خصم 22%</p></div>
+            <div class="product"><h3>Watermelon</h3><p class="price-before">40 LE</p><p class="price-after">30 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Mango</h3><p class="price-before">45 LE</p><p class="price-after">35 LE</p><p class="discount">خصم 22%</p></div>
+            <div class="product"><h3>Strawberry</h3><p class="price-before">45 LE</p><p class="price-after">35 LE</p><p class="discount">خصم 22%</p></div>
+            <div class="product"><h3>Guava</h3><p class="price-before">40 LE</p><p class="price-after">30 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Lemon</h3><p class="price-before">40 LE</p><p class="price-after">30 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Peach</h3><p class="price-before">60 LE</p><p class="price-after">45 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Orange</h3><p class="price-before">40 LE</p><p class="price-after">30 LE</p><p class="discount">خصم 25%</p></div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2025 Flavour Cafe - <a href="https://www.instagram.com/fla.vourcafe" target="_blank" rel="noopener">Instagram</a></p>
-        <p>Designed by Ahmed Idrees</p>
-    </footer>
+    <!-- قسم Iced Drinks -->
+    <div id="iced-drinks" class="section">
+        <h2 class="section-title">Iced Drinks</h2>
+        <div class="products-container">
+            <div class="product"><h3>Ice Coffee</h3><p class="price-before">65 LE</p><p class="price-after">55 LE</p><p class="discount">خصم 15%</p></div>
+            <div class="product"><h3>Iced Latte</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Iced Latte Caramel</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Iced Mocha</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Iced White Mocha</h3><p class="price-before">80 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>White Mocha Extra Cream</h3><p class="price-before">100 LE</p><p class="price-after">95 LE</p><p class="discount">خصم 5%</p></div>
+            <div class="product"><h3>Iced Spanish Latte</h3><p class="price-before">85 LE</p><p class="price-after">80 LE</p><p class="discount">خصم 6%</p></div>
+            <div class="product"><h3>Iced Matcha</h3><p class="price-before">70 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 14%</p></div>
+        </div>
+    </div>
+
+    <!-- قسم Frappe -->
+    <div id="frappe" class="section">
+        <h2 class="section-title">Frappe</h2>
+        <div class="products-container">
+            <div class="product"><h3>Matcha Frappe</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Frappe Vanilla</h3><p class="price-before">65 LE</p><p class="price-after">55 LE</p><p class="discount">خصم 15%</p></div>
+            <div class="product"><h3>Frappe Caramel</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Frappe Mocha</h3><p class="price-before">75 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 13%</p></div>
+            <div class="product"><h3>Frappe Coffee</h3><p class="price-before">70 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 14%</p></div>
+            <div class="product"><h3>Frappe White Mocha</h3><p class="price-before">80 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 13%</p></div>
+        </div>
+    </div>
+
+    <!-- قسم Milk Shake -->
+    <div id="milk-shake" class="section">
+        <h2 class="section-title">Milk Shake</h2>
+        <div class="products-container">
+            <div class="product"><h3>Passion fruit</h3><p class="price-before">80 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Blueberry</h3><p class="price-before">80 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Mix berry</h3><p class="price-before">90 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 22%</p></div>
+            <div class="product"><h3>Kiwi</h3><p class="price-before">80 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Peach</h3><p class="price-before">70 LE</p><p class="price-after">55 LE</p><p class="discount">خصم 21%</p></div>
+            <div class="product"><h3>Strawberry</h3><p class="price-before">85 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Vanilla</h3><p class="price-before">75 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 20%</p></div>
+            <div class="product"><h3>Chocolate</h3><p class="price-before">80 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Caramel</h3><p class="price-before">85 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Lotus</h3><p class="price-before">90 LE</p><p class="price-after">70 LE</p><p class="discount">خصم 22%</p></div>
+            <div class="product"><h3>Oreo</h3><p class="price-before">80 LE</p><p class="price-after">65 LE</p><p class="discount">خصم 18%</p></div>
+            <div class="product"><h3>Pistachio</h3><p class="price-before">95 LE</p><p class="price-after">75 LE</p><p class="discount">خصم 21%</p></div>
+            <div class="product"><h3>Lagoon</h3><p class="price-before">80 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 25%</p></div>
+            <div class="product"><h3>Lemon</h3><p class="price-before">70 LE</p><p class="price-after">50 LE</p><p class="discount">خصم 28%</p></div>
+            <div class="product"><h3>Pineapple</h3><p class="price-before">75 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 20%</p></div>
+            <div class="product"><h3>Pineapple Mango</h3><p class="price-before">80 LE</p><p class="price-after">60 LE</p><p class="discount">خصم 25%</p></div>            
+    </div>
+
 </body>
 </html>
