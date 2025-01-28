@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خصومات</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
@@ -26,21 +26,22 @@
             text-decoration: none;
             font-size: 18px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #ad8330; /* اللون البرتقالي */
             padding: 10px 15px;
             border-radius: 8px;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navigation a:hover {
-            background-color: #0056b3;
+            background-color: #3a320c; /* اللون البني الغامق */
         }
 
         .section-title {
             font-size: 24px;
-            color: #555;
+            color: #3a320c; /* اللون البني الغامق */
             margin: 20px 0 10px;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #ad8330; /* اللون البرتقالي */
             display: inline-block;
             padding: 5px 10px;
         }
@@ -59,6 +60,12 @@
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .product h3 {
@@ -75,13 +82,13 @@
 
         .product .price-after {
             font-size: 16px;
-            color: green;
+            color: #ad8330; /* اللون البرتقالي */
             font-weight: bold;
         }
 
         .product .discount {
             font-size: 14px;
-            color: #d9534f;
+            color: #3a320c; /* اللون البني الغامق */
             font-weight: bold;
             margin-top: 5px;
         }
