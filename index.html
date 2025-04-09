@@ -100,6 +100,29 @@
 </div>
 
 <script>
+  const drinkTypes = {
+    "لاتيه": "قهوة",
+    "اسبريسو": "قهوة",
+    "موكا": "قهوة",
+    "كابتشينو": "قهوة",
+    "كراميل لاتيه": "قهوة",
+    "آيس لاتيه": "قهوة",
+    "آيس موكا": "قهوة",
+    "قهوة تركي": "قهوة",
+    "شوكولاتة ساخنة": "شيكولاتة",
+    "كراميل فرابيه": "فرابيه",
+    "ماتشا": "ماتشا",
+    "ماتشا فرابيه": "ماتشا",
+    "سموذي فراولة": "سموذي",
+    "سموذي مانجو": "سموذي",
+    "بلوبيري ميلك شيك": "ميلك شيك",
+    "فراولة بالحليب": "ميلك شيك",
+    "فروت سلاط": "فواكه",
+    "عصير برتقال": "عصير",
+    "عصير ليمون بالنعناع": "عصير",
+    "كيـوي": "عصير"
+  };
+
   function startSelection(accepted) {
     document.getElementById('startPopup').style.display = 'none';
     if (accepted) {
@@ -115,29 +138,17 @@
       return;
     }
 
+    // احسب الأنواع اللي اختارها المستخدم
+    const types = selected.map(name => drinkTypes[name] || "أخرى");
+    const freq = types.reduce((acc, t) => { acc[t] = (acc[t] || 0) + 1; return acc; }, {});
+    const favoriteType = Object.entries(freq).sort((a, b) => b[1] - a[1])[0][0];
+
     const allDrinks = [...document.querySelectorAll('#drinkList input')].map(i => i.value);
-    const filtered = allDrinks.filter(d => !selected.includes(d));
+    const filtered = allDrinks.filter(d => !selected.includes(d) && drinkTypes[d] === favoriteType);
 
-    function getSimilarityScore(drink, selectedDrinks) {
-      return selectedDrinks.reduce((score, sel) => {
-        if (drink.includes(sel) || sel.includes(drink)) {
-          score += 2;
-        }
-        const wordsInCommon = drink.split(' ').filter(word => sel.split(' ').includes(word));
-        score += wordsInCommon.length;
-        return score;
-      }, 0);
-    }
+    const suggestion = filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : allDrinks[Math.floor(Math.random() * allDrinks.length)];
 
-    const scored = filtered.map(drink => ({
-      name: drink,
-      score: getSimilarityScore(drink.toLowerCase(), selected.map(s => s.toLowerCase()))
-    }));
-
-    scored.sort((a, b) => b.score - a.score);
-    const bestMatch = scored[0]?.name || "";
-
-    document.getElementById('suggestion').textContent = `ممكن يعجبك كمان: ${bestMatch}`;
+    document.getElementById('suggestion').textContent = `ممكن يعجبك كمان: ${suggestion}`;
   });
 </script>
 </body>
