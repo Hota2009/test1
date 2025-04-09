@@ -1,174 +1,144 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Flavour Cafe - Discover our menu and enjoy delightful beverages and snacks.">
-    <meta name="keywords" content="Flavour Cafe, coffee, beverages, snacks, menu">
-    <meta name="author" content="Ahmed Idrees">
-    <title>Flavour Cafe</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Arial", sans-serif;
-            background-color: #f8f5f0;
-            color: #4a3f35;
-        }
-
-        .blurred {
-            filter: blur(8px);
-        }
-
-        .promo-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .promo-message {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #d4a373;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .promo-message a {
-            display: inline-block;
-            margin-top: 10px;
-            background-color: #d4a373;
-            color: #4a3f35;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .promo-message a:hover {
-            background-color: #4a3f35;
-            color: #f8f5f0;
-        }
-
-        header {
-            background-color: #4a3f35;
-            color: #d4a373;
-            text-align: center;
-            padding: 15px 0;
-            position: relative;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        header nav {
-            margin-top: 10px;
-        }
-
-        header .discount-link {
-            background-color: #d4a373;
-            color: #4a3f35;
-            padding: 8px 16px;
-            text-decoration: none;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        header .discount-link:hover {
-            background-color: #4a3f35;
-            color: #f8f5f0;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: calc(100vh - 180px);
-            padding: 10px;
-        }
-
-        embed {
-            width: 90%;
-            max-width: 400px;
-            height: 80vh;
-            border: 2px solid #d4a373;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #4a3f35;
-            color: #f8f5f0;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 12px;
-        }
-
-        footer a {
-            color: #d4a373;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            embed {
-                height: 70vh;
-            }
-
-            header h1 {
-                font-size: 18px;
-            }
-
-            footer {
-                font-size: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Flavour - اختيار مشروبك</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 90%;
+    }
+    .popup-content h2 {
+      margin-bottom: 20px;
+    }
+    .popup-content button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .menu-container {
+      display: none;
+    }
+    .checkbox-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .checkbox-list label {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div id="promo-overlay" class="promo-overlay">
-        <div class="promo-message">
-            <p>⚡ خصومات رائعة بانتظارك! توجه الآن إلى قسم الخصومات للحصول على المزيد من التفاصيل.</p>
-            <a href="dis.html">اذهب إلى قسم الخصومات</a>
-        </div>
+
+<div class="popup" id="startPopup">
+  <div class="popup-content">
+    <h2>سيبنا نختارك مشروبك المرة دي</h2>
+    <button onclick="startSelection(true)" style="background-color: #3a320c; color: white;">موافق</button>
+    <button onclick="startSelection(false)">لا</button>
+  </div>
+</div>
+
+<div class="container menu-container" id="menu">
+  <header>
+    <h1>Flavour</h1>
+    <p class="subtitle">اختار 3 مشروبات مفضله لك</p>
+  </header>
+
+  <form id="drinkForm">
+    <div class="checkbox-list" id="drinkList">
+      <label><input type="checkbox" value="لاتيه"> لاتيه</label>
+      <label><input type="checkbox" value="اسبريسو"> اسبريسو</label>
+      <label><input type="checkbox" value="موكا"> موكا</label>
+      <label><input type="checkbox" value="كابتشينو"> كابتشينو</label>
+      <label><input type="checkbox" value="كراميل لاتيه"> كراميل لاتيه</label>
+      <label><input type="checkbox" value="ماتشا"> ماتشا</label>
+      <label><input type="checkbox" value="شوكولاتة ساخنة"> شوكولاتة ساخنة</label>
+      <label><input type="checkbox" value="آيس لاتيه"> آيس لاتيه</label>
+      <label><input type="checkbox" value="سموذي فراولة"> سموذي فراولة</label>
+      <label><input type="checkbox" value="سموذي مانجو"> سموذي مانجو</label>
+      <label><input type="checkbox" value="عصير برتقال"> عصير برتقال</label>
+      <label><input type="checkbox" value="عصير ليمون بالنعناع"> عصير ليمون بالنعناع</label>
+      <label><input type="checkbox" value="آيس موكا"> آيس موكا</label>
+      <label><input type="checkbox" value="فراولة بالحليب"> فراولة بالحليب</label>
+      <label><input type="checkbox" value="كيـوي"> كيـوي</label>
+      <label><input type="checkbox" value="ماتشا فرابيه"> ماتشا فرابيه</label>
+      <label><input type="checkbox" value="فروت سلاط"> فروت سلاط</label>
+      <label><input type="checkbox" value="بلوبيري ميلك شيك"> بلوبيري ميلك شيك</label>
+      <label><input type="checkbox" value="كراميل فرابيه"> كراميل فرابيه</label>
+      <label><input type="checkbox" value="قهوة تركي"> قهوة تركي</label>
     </div>
+    <br>
+    <button type="submit" style="background-color: #cda65a; color: white; padding: 10px 20px;">اقترحلي مشروب</button>
+  </form>
 
-    <header id="main-content">
-        <h1>Flavour Cafe</h1>
-        <nav>
-            <a href="dis.html" class="discount-link">الخصومات</a>
-        </nav>
-    </header>
+  <div id="suggestion" style="margin-top: 20px; font-weight: bold; font-size: 1.2em;"></div>
+</div>
 
-    <main>
-        <embed src="https://menu.instalacarte.com/menu/s/Flavour" title="Flavour Cafe Menu"></embed>
-    </main>
+<script>
+  function startSelection(accepted) {
+    document.getElementById('startPopup').style.display = 'none';
+    if (accepted) {
+      document.getElementById('menu').style.display = 'block';
+    }
+  }
 
-    <footer>
-        <p>© 2025 Flavour Cafe - <a href="https://www.instagram.com/fla.vourcafe" target="_blank" rel="noopener">Instagram</a></p>
-        <p>Designed by Ahmed Idrees</p>
-    </footer>
+  document.getElementById('drinkForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const selected = [...document.querySelectorAll('#drinkList input:checked')].map(c => c.value);
+    if (selected.length !== 3) {
+      alert("اختار 3 مشروبات فقط");
+      return;
+    }
 
-    <script>
-        // Remove the promo message and overlay after 5 seconds
-        setTimeout(() => {
-            document.getElementById('promo-overlay').style.display = 'none';
-        }, 5000);
-    </script>
+    const allDrinks = [...document.querySelectorAll('#drinkList input')].map(i => i.value);
+    const filtered = allDrinks.filter(d => !selected.includes(d));
+
+    function getSimilarityScore(drink, selectedDrinks) {
+      return selectedDrinks.reduce((score, sel) => {
+        if (drink.includes(sel) || sel.includes(drink)) {
+          score += 2;
+        }
+        const wordsInCommon = drink.split(' ').filter(word => sel.split(' ').includes(word));
+        score += wordsInCommon.length;
+        return score;
+      }, 0);
+    }
+
+    const scored = filtered.map(drink => ({
+      name: drink,
+      score: getSimilarityScore(drink.toLowerCase(), selected.map(s => s.toLowerCase()))
+    }));
+
+    scored.sort((a, b) => b.score - a.score);
+    const bestMatch = scored[0]?.name || "";
+
+    document.getElementById('suggestion').textContent = `ممكن يعجبك كمان: ${bestMatch}`;
+  });
+</script>
 </body>
 </html>
