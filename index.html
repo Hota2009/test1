@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavour - Coffee & Beverages Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HWR6YHBXHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HWR6YHBXHK');
+</script>
+<body>
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>أهلاً وسهلاً في Flavour! 🎮</h2>
+            </div>
+            <div class="modal-body">
+                <p>جربت لعبة Flavour قبل كده ولا لسه؟</p>
+                <p>تعالى استمتع معانا واكتشف عالم النكهات الحلو!</p>
+                <div class="modal-buttons">
+                    <a href="https://hota2009.github.io/flavour-game/" target="_blank" class="game-btn">
+                        <i class="fas fa-gamepad"></i>
+                        يلا جرب اللعبة
+                    </a>
+                    <button id="closeModal" class="close-btn">
+                        <i class="fas fa-coffee"></i>
+                        شوف المنيو
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <header>
+            <h1>Flavour</h1>
+            <p class="subtitle">Coffee & Beverages Menu</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a drink...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="categories">
+            <div class="category active" data-category="all">
+                <i class="fas fa-th-large"></i>
+                <span>All</span>
+            </div>
+            <div class="category" data-category="waffle">
+                <i class="fas fa-birthday-cake"></i>
+                <span>Waffle</span>
+            </div>
+            <div class="category" data-category="hot-drinks">
+                <i class="fas fa-coffee"></i>
+                <span>Hot Drinks</span>
+            </div>
+            <div class="category" data-category="iced-drinks">
+                <i class="fas fa-ice-cream"></i>
+                <span>Iced Drinks</span>
+            </div>
+            <div class="category" data-category="fresh-juice">
+                <i class="fas fa-glass-water-droplet"></i>
+                <span>Fresh Juice</span>
+            </div>
+            <div class="category" data-category="smoothies">
+                <i class="fas fa-blender"></i>
+                <span>Smoothies</span>
+            </div>
+            <div class="category" data-category="frappe">
+                <i class="fas fa-mug-hot"></i>
+                <span>Frappe</span>
+            </div>
+            <div class="category" data-category="milk-shake">
+                <i class="fas fa-whiskey-glass"></i>
+                <span>Milk Shake</span>
+            </div>
+            <div class="category" data-category="Summer-drinks">
+                <i class="fas fa-glass-water"></i>
+                <span>Summer Drinks</span>
+            </div>
+            <div class="category" data-category="winter-corner">
+                <i class="fas fa-snowflake"></i>
+                <span>Winter Corner</span>
+            </div>
+            <div class="category" data-category="mocktails">
+                <i class="fas fa-cocktail"></i>
+                <span>Mocktails</span>
+            </div>
+            <div class="category" data-category="cold-drinks">
+                <i class="fas fa-wine-bottle"></i>
+                <span>Cold Drinks</span>
+            </div>
+            <div class="category" data-category="ice-cream">
+                <i class="fas fa-ice-cream"></i>
+                <span>Ice Cream</span>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="products">
+            <!-- Products will be added dynamically via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+<footer class="copyright">
+    &copy; <a href="https://wa.me/201155224461" target="_blank">Ahmed Idrees</a></p>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
