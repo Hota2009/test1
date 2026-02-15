@@ -28,13 +28,13 @@ const categories = [
             { id: 5, name: 'Matcha Latte', price: '65 EGP', image: '65.jpg' },
             { id: 6, name: 'Cortado', price: '60 EGP', image: '66.png' },
             { id: 7, name: 'Espresso', price: '40 EGP', image: '67.jpg' },
-            { id: 8, name: 'Hot Chocolate', price: '50 EGP', image: '68.jpg' },
+            { id: 8, name: 'Hot Chocolate', price: '55 EGP', image: '68.jpg' },
             { id: 9, name: 'Mocha Coffee', price: '70 EGP', image: '69.png' },
             { id: 10, name: 'White Mocha', price: '70 EGP', image: '70.png' },
             { id: 11, name: 'Spanish Latte', price: '80 EGP', image: '71.png' },
             { id: 12, name: 'Caramel Latte', price: '70 EGP', image: '72.png' },
-            { id: 13, name: 'Turkish Coffee', price: '20 EGP', image: '73.jpg' },
-            { id: 14, name: 'French Coffee', price: '30 EGP', image: '74.jpg' },
+            { id: 13, name: 'Turkish Coffee', price: '25 EGP', image: '73.jpg' },
+            { id: 14, name: 'French Coffee', price: '35 EGP', image: '74.jpg' },
             { id: 15, name: 'Nescafe', price: '35 EGP', image: '75.jpg' },
             { id: 16, name: 'Tea', price: '15 EGP', image: '76.jpg' },
             { id: 17, name: 'Milk Tea', price: '20 EGP', image: '78.jpg' },
@@ -67,13 +67,13 @@ const categories = [
         name: 'Frappe',
         icon: '🍧',
         products: [
-            { id: 1, name: 'Matcha Frappe', price: '65 EGP', image: '57.jpg' },
-            { id: 2, name: 'Caramel Frappe', price: '65 EGP', image: '55.png' },
-            { id: 3, name: 'Vanilla Frappe', price: '55 EGP', image: '58.png' },
-            { id: 4, name: 'Mocha Frappe', price: '65 EGP', image: '56.png' },
-            { id: 5, name: 'Coffee Frappe', price: '60 EGP', image: '60.png' },
+            { id: 1, name: 'Matcha Frappe', price: '75 EGP', image: '57.jpg' },
+            { id: 2, name: 'Caramel Frappe', price: '70 EGP', image: '55.png' },
+            { id: 3, name: 'Vanilla Frappe', price: '65 EGP', image: '58.png' },
+            { id: 4, name: 'Mocha Frappe', price: '70 EGP', image: '56.png' },
+            { id: 5, name: 'Coffee Frappe', price: '65 EGP', image: '60.png' },
             { id: 6, name: 'frappetiono', price: '90 EGP', image: '55.png' },
-            { id: 7, name: 'White Mocha Frappe', price: '70 EGP', image: '59.png' }
+            { id: 7, name: 'White Mocha Frappe', price: '75 EGP', image: '59.png' }
         ]
     },
      {
@@ -119,7 +119,7 @@ const categories = [
             { id: 13, name: 'Mango Kiwi', price: '70 EGP', image: 'from31.jpg', description: 'Ingredients: Mango, kiwi, ice cream' },
             { id: 14, name: 'Isfahani', price: '80 EGP', image: 'from32.jpg', description: 'Ingredients: Mango, avocado, nuts' },
             { id: 15, name: 'Power Cashew', price: '80 EGP', image: 'from33.png', description: 'Ingredients: Dates, cashew' },
-            { id: 16, name: 'Fruit Salad', price: '50 EGP', image: 'from34.jpg', description: 'A mix of fresh fruits' },
+            { id: 16, name: 'Fruit Salad', price: '60 EGP', image: 'from34.jpg', description: 'A mix of fresh fruits' },
             { id: 17, name: 'Colorts', price: '60 EGP', image: 'from35.jpg', description: 'Ingredients: Kiwi, lemon, mint' }
         ]
     },
@@ -133,11 +133,11 @@ const categories = [
             { id: 3, name: 'Mixed Berry', price: '70 EGP', image: '39.png' },
             { id: 4, name: 'Kiwi', price: '70 EGP', image: '40.png' },
             { id: 5, name: 'Peach', price: '65 EGP', image: '41.png' },
-            { id: 6, name: 'Watermelon', price: '55 EGP', image: '42.png' },
-            { id: 7, name: 'Mango', price: '55 EGP', image: '43.png' },
-            { id: 8, name: 'Strawberry', price: '55 EGP', image: '44.png' },
+            { id: 6, name: 'Watermelon', price: '60 EGP', image: '42.png' },
+            { id: 7, name: 'Mango', price: '60 EGP', image: '43.png' },
+            { id: 8, name: 'Strawberry', price: '60 EGP', image: '44.png' },
             { id: 9, name: 'Marshmallow', price: '65 EGP', image: '45.png' },
-            { id: 10, name: 'Vanilla', price: '50 EGP', image: '46.png' },
+            { id: 10, name: 'Vanilla', price: '60 EGP', image: '46.png' },
             { id: 11, name: 'Chocolate', price: '55 EGP', image: '47.png' },
             { id: 12, name: 'Lotus', price: '70 EGP', image: '48.png' },
             { id: 13, name: 'Oreo', price: '60 EGP', image: '49.png' },
@@ -153,15 +153,15 @@ const categories = [
         name: 'Cold Drinks',
         icon: '🥃',
         products: [
-            { id: 1, name: 'Redbull', price: '60 EGP', image: '6.jpeg', description: 'Redbull' },
+            { id: 1, name: 'Redbull', price: '70 EGP', image: '6.jpeg', description: 'Redbull' },
             { id: 2, name: 'Fayrouz', price: '25 EGP', image: '7.jpeg', description: 'Fayrouz' },
-            { id: 3, name: 'V Cola', price: '23 EGP', image: '8.jpeg', description: 'V Cola' },
-            { id: 4, name: '7 Up', price: '23 EGP', image: '9.jpeg', description: '7 Up' },
-            { id: 5, name: 'Schweppes', price: '23 EGP', image: '1.jpeg', description: 'Schweppes' },
-            { id: 6, name: 'Miranda', price: '23 EGP', image: '2.jpeg', description: 'Miranda' },
+            { id: 3, name: 'V Cola', price: '25 EGP', image: '8.jpeg', description: 'V Cola' },
+            { id: 4, name: '7 Up', price: '25 EGP', image: '9.jpeg', description: '7 Up' },
+            { id: 5, name: 'Schweppes', price: '25 EGP', image: '1.jpeg', description: 'Schweppes' },
+            { id: 6, name: 'Miranda', price: '25 EGP', image: '2.jpeg', description: 'Miranda' },
             { id: 7, name: 'Small Water', price: '10 EGP', image: '3.jpeg', description: 'Small Water' },
-            { id: 8, name: 'Sting', price: '23 EGP', image: '4.jpeg', description: 'Sting' },
-            { id: 9, name: 'Birell', price: '27 EGP', image: '5.jpeg', description: 'Birell' }
+            { id: 8, name: 'Sting', price: '25 EGP', image: '4.jpeg', description: 'Sting' },
+            { id: 9, name: 'Birell', price: '30 EGP', image: '5.jpeg', description: 'Birell' }
         ]
     },
     {
@@ -169,16 +169,16 @@ const categories = [
         name: 'Mocktails',
         icon: '🍸',
         products: [
-            { id: 10, name: 'Lavender', price: '45 EGP', image: '11.png', description: 'Ingredients: Lemon juice, lavender' },
+            { id: 10, name: 'Lavender', price: '60 EGP', image: '11.png', description: 'Ingredients: Lemon juice, lavender' },
             { id: 11, name: 'Sun Shine', price: '55 EGP', image: '12.png', description: 'Ingredients: Strawberry, lemon, soda' },
             { id: 12, name: 'Sun Set', price: '60 EGP', image: '13.png', description: 'Ingredients: Strawberry, orange, lemon, soda' },
-            { id: 13, name: 'Blue Sky', price: '55 EGP', image: '14.png', description: 'Ingredients: Blue Curacao, lemon, soda' },
-            { id: 14, name: 'Skutch Mint', price: '55 EGP', image: '15.png', description: 'Ingredients: Mint, lemon, soda' },
+            { id: 13, name: 'Blue Sky', price: '60 EGP', image: '14.png', description: 'Ingredients: Blue Curacao, lemon, soda' },
+            { id: 14, name: 'Skutch Mint', price: '60 EGP', image: '15.png', description: 'Ingredients: Mint, lemon, soda' },
             { id: 15, name: 'Blue Passion', price: '70 EGP', image: '16.png', description: 'Ingredients: Passion fruit, Blue Curacao, lemon, soda' },
-            { id: 16, name: 'Peach Mojito', price: '55 EGP', image: '17.png', description: 'Ingredients: Peach, lemon, soda' },
+            { id: 16, name: 'Peach Mojito', price: '60 EGP', image: '17.png', description: 'Ingredients: Peach, lemon, soda' },
             { id: 17, name: 'Blue Power', price: '95 EGP', image: '18.png', description: 'Ingredients: Red Bull, Blue Curacao, lemon, soda' },
             { id: 18, name: 'Passion Fruit Mojito', price: '60 EGP', image: '19.png', description: 'Ingredients: Passion fruit, lemon, soda' },
-            { id: 19, name: 'Gum', price: '50 EGP', image: '20.png', description: 'Gum' },
+            { id: 19, name: 'Gum', price: '55 EGP', image: '20.png', description: 'Gum' },
             { id: 20, name: 'watermelon', price: '60 EGP', image: 'WhatsApp Image 2025-04-26 at 21.30.52_29528aec.jpg', description: 'watermelon, soda, lemon, mint' },
             { id: 21, name: 'Apple Mint', price: '65 EGP', image: '21.png', description: 'Ingredients: Apple, mint' }
         ]
@@ -188,13 +188,12 @@ const categories = [
         name: 'Winter Corner',
         icon: '❄️',
         products: [
-            { id: 1, name: 'Hot Cider', price: '40 EGP', description: 'Hot Cider' },
-            { id: 2, name: 'Sahlab', price: '30 EGP', description: 'Sahlab' },
-            { id: 3, name: 'Sahlab with Nuts', price: '50 EGP', description: 'Sahlab with Nuts' },
-            { id: 4, name: 'Sahlab with Fruits', price: '50 EGP', description: 'Sahlab with Fruits' },
-            { id: 5, name: 'Sahlab Chocolate', price: '35 EGP', description: 'Sahlab Chocolate' },
-            { id: 6, name: 'Sahlab Chocolate with Nuts', price: '55 EGP', description: 'Sahlab Chocolate with Nuts' },
-            { id: 7, name: 'Hot Oreo', price: '55 EGP', description: 'Hot Oreo' }
+            { id: 1, name: 'Hot Cider', price: '35 EGP', image: 'Hot Cider.webp', description: 'Hot Cider' },
+            { id: 2, name: 'Sahlab', price: '45 EGP', image: 'sahlb 2.webp', description: 'Sahlab' },
+            { id: 3, name: 'Sahlab with Nuts', price: '65 EGP', image: 'sahlb 1.webp', description: 'Sahlab with Nuts' },
+            { id: 5, name: 'Sahlab Chocolate', price: '50 EGP', image: 'Sahlab Chocolate with Nuts.webp', description: 'Sahlab Chocolate' },
+            { id: 6, name: 'Sahlab Chocolate with Nuts', price: '70 EGP', image: 'Sahlab Chocolate with Nuts.webp', description: 'Sahlab Chocolate with Nuts' },
+            { id: 7, name: 'Hot Oreo', price: '50 EGP', image: 'Hot Oreo.webp', description: 'Hot Oreo' }
         ]
     },
      {
@@ -210,14 +209,23 @@ const categories = [
 
 // Function to create product card
 function createProductCard(product) {
+    // Extract price number and currency
+    const priceParts = product.price.split(' ');
+    const priceNum = priceParts[0];
+    const currency = priceParts[1] || 'EGP';
+
     return `
         <div class="product-card">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
-                <p class="product-price">${product.price}</p>
-                ${product.description ? `<p class="product-description">${product.description}</p>` : ''}
+                <div class="product-price-row">${product.price}</div>
+                <div class="price-badge">
+                    <span class="price-text-badge">${priceNum}</span>
+                    <span class="currency-badge">${currency}</span>
+                </div>
             </div>
+            ${product.isNew ? '<div class="new-ribbon">NEW</div>' : ''}
         </div>
     `;
 }
@@ -248,38 +256,9 @@ function searchProducts(searchTerm) {
     );
 }
 
-// Welcome Modal functionality
-function showWelcomeModal() {
-    const modal = document.getElementById('welcomeModal');
-    const closeBtn = document.querySelector('.close');
-    const closeModalBtn = document.getElementById('closeModal');
-    
-    // Show modal
-    modal.style.display = 'block';
-    
-    // Close modal when clicking X
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
-    }
-    
-    // Close modal when clicking "تصفح المنيو" button
-    closeModalBtn.onclick = function() {
-        modal.style.display = 'none';
-    }
-    
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
-}
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Show welcome modal first
-    showWelcomeModal();
-    
     // Display all products initially
     displayProducts(categories. flatMap(cat => cat. products));
  
@@ -323,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
 
